@@ -1,0 +1,23 @@
+R,C = list(map(int,input().split()))
+
+matrix = []
+for _ in range(R):
+    row = list(map(int,input().split()))
+    matrix.append(row)
+
+Q = int(input())
+
+Query = []
+for _ in range(Q):
+    r1,c1,r2,c2 = map(int,input().split())
+    Query.append((r1,c1,r2,c2))
+
+for queries in Query:
+    r1,c1,r2,c2 = queries
+    result = 0
+    for i in range(r1-1,r2):
+        for j in range(c1-1,c2):
+            result |= matrix[i][j]
+    print(result)
+
+
